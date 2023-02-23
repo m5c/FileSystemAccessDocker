@@ -69,18 +69,30 @@
 
             <!-- specify main class for JAR manifest-->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>eu.kartoffelquadrat.fsaccess.Launcher
-                            </mainClass>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>eu.kartoffelquadrat.fsaccess.Launcher</mainClass>
                         </manifest>
                     </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <finalName>FileSystemAccessDocker</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
             </plugin>
+
 
             <!-- Plugin to refuse build in case of checkstyle violations-->
             <plugin>
