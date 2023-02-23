@@ -25,7 +25,7 @@ public class Launcher {
   public static void main(String[] args) throws IOException {
 
     // Attempt to write to disk
-    String greeting = "Hello, World!";
+    String greeting = "Hello, beautiful World!";
     File location = new File("greeting.txt");
     FileUtils.writeStringToFile(location, greeting, StandardCharsets.UTF_8);
 
