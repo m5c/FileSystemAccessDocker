@@ -35,6 +35,9 @@ docker build -t "docker-fs:commonsio" . -f Dockerfile
 
 # Run container to test file system access
 docker run --name=fs-io docker-fs:commonsio
+
+# Optional, to restart container again to observe growing file list
+docker start -ai CONTAINER_ID
 ```
 
 ## Contact / Pull Requests
